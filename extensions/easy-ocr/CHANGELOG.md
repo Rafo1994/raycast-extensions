@@ -2,7 +2,7 @@
 
 ## [Bug Fixes] - {PR_MERGE_DATE}
 
-- Fixed bug when detecting languages that don't use Latin letters (Chinese, Japanese, ...) 
+- Fixed bug when auto detecting languages that don't use Latin letters (Chinese, Japanese, ...) 
 
 
 ## [Enhancements] - 2025-04-15
