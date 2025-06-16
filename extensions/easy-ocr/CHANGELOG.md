@@ -1,5 +1,10 @@
 # Tesseract OCR Changelog
 
+## [Bug Fixes] - {PR_MERGE_DATE}
+
+- Fixed bug when detecting languages that don't use Latin letters (Chinese, Japanese, ...) 
+
+
 ## [Enhancements] - 2025-04-15
 
 - Added automatic language detection option with either Raycast AI, Franc, LanguageDetect or Tinyld

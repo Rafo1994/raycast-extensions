@@ -27,10 +27,8 @@ export default async function main() {
   const filePath = await takeScreenshot();
 
   try {
-    let text = await tesseractOcr(filePath, defaultLangCode);
+    let text = await tesseractOcr(filePath, "osd");
     text = utils.handleNewLines(text);
-
-    let languageUsed = defaultLangCode;
 
     if (!text) {
       await showToast({
@@ -52,7 +50,7 @@ export default async function main() {
       text = utils.handleNewLines(text);
     }
 
-    languageUsed = autodetectLanguage?.languageName ?? languageUsed;
+    const languageUsed = autodetectLanguage?.languageName ?? defaultLangCode
 
     await Clipboard.copy(text);
     await showToast({
@@ -75,7 +73,7 @@ async function autoDetectedLanguage(text: string) {
   }
 
   // Detect language
-  return detect(text, {
+  return await detect(text, {
     languageCodeFormat: LanguageCodeFormat.ISO_639_3,
   });
 }
